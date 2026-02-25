@@ -14,4 +14,4 @@ public class PalindromeCheckerApp {
         }
         sc.close();
     }
-}
+}"// UC4 verification comment" 
