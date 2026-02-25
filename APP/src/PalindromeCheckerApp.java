@@ -1,27 +1,23 @@
-public class PalindromeCheckerUC4 {
+import java.util.Stack;
 
+public class PalindromeCheckerUC5 {
     public static void main(String[] args) {
-        String original = "racecar";  // Change this to test other words
-        char[] chars = original.toCharArray();
-        boolean isPalindrome = true;
+        String str = "madam"; // example
+        Stack<Character> stack = new Stack<>();
 
-        // Two-pointer approach
-        int start = 0;
-        int end = chars.length - 1;
-        while (start < end) {
-            if (chars[start] != chars[end]) {
-                isPalindrome = false;
-                break;
-            }
-            start++;
-            end--;
+        for (char c : str.toCharArray()) {
+            stack.push(c);
         }
 
-        // Display result
-        if (isPalindrome) {
-            System.out.println(original + " is a palindrome.");
+        String reversed = "";
+        while (!stack.isEmpty()) {
+            reversed += stack.pop();
+        }
+
+        if (str.equals(reversed)) {
+            System.out.println(str + " is a palindrome.");
         } else {
-            System.out.println(original + " is not a palindrome.");
+            System.out.println(str + " is not a palindrome.");
         }
     }
 }
