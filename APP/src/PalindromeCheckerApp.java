@@ -1,19 +1,20 @@
-public class UC2_HardcodedPalindrome {
+// UC3: Palindrome Check Using String Reverse
+public class PalindromeCheckerUC3 {
+
     public static void main(String[] args) {
-        // Hardcoded string
-        String text = "madam";
+        String original = "racecar";  // Change this string to test other words
+        String reversed = "";
 
-        // Clean string (remove spaces, convert to lowercase)
-        String cleaned = text.replaceAll("\\s+", "").toLowerCase();
+        // Reverse the string using a loop
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed += original.charAt(i);
+        }
 
-        // Reverse the string
-        String reversed = new StringBuilder(cleaned).reverse().toString();
-
-        // Check palindrome
-        if (cleaned.equals(reversed)) {
-            System.out.println("✅ \"" + text + "\" is a Palindrome!");
+        // Compare original and reversed strings
+        if (original.equals(reversed)) {
+            System.out.println(original + " is a palindrome.");
         } else {
-            System.out.println("❌ \"" + text + "\" is NOT a Palindrome!");
+            System.out.println(original + " is not a palindrome.");
         }
     }
 }
