@@ -57,6 +57,16 @@ public class PalindromeCheckerApp extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
+        // UC1: Display welcome message and app information
+        System.out.println("===================================");
+        System.out.println("   Welcome to PalindromeCheckerApp");
+        System.out.println("   Version: 1.0");
+        System.out.println("   Author: Deepika Ramireddy");
+        System.out.println("===================================\n");
+
+        System.out.println("Launching application...");
+
+        // Launch the GUI
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
