@@ -1,18 +1,17 @@
-public class PalindromeCheckerUC2 {
+import java.util.Scanner;
 
+public class PalindromeCheckerApp {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter string: ");
+        String str = sc.nextLine();
+        String reversed = new StringBuilder(str).reverse().toString();
 
-        // Hardcoded string (String Literal)
-        String word = "madam";
-
-        // Reverse the string
-        String reversed = new StringBuilder(word).reverse().toString();
-
-        // Conditional check
-        if (word.equals(reversed)) {
-            System.out.println(word + " is a palindrome.");
+        if(str.equals(reversed)) {
+            System.out.println(str + " is a palindrome");
         } else {
-            System.out.println(word + " is not a palindrome.");
+            System.out.println(str + " is not a palindrome");
         }
+        sc.close();
     }
-}
+}"// UC4 verification comment" 
