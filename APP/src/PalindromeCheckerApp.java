@@ -1,17 +1,24 @@
-// UC3: Palindrome Check Using String Reverse
-public class PalindromeCheckerUC3 {
+public class PalindromeCheckerUC4 {
 
     public static void main(String[] args) {
-        String original = "racecar";  // Change this string to test other words
-        String reversed = "";
+        String original = "racecar";  // Change this to test other words
+        char[] chars = original.toCharArray();
+        boolean isPalindrome = true;
 
-        // Reverse the string using a loop
-        for (int i = original.length() - 1; i >= 0; i--) {
-            reversed += original.charAt(i);
+        // Two-pointer approach
+        int start = 0;
+        int end = chars.length - 1;
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
 
-        // Compare original and reversed strings
-        if (original.equals(reversed)) {
+        // Display result
+        if (isPalindrome) {
             System.out.println(original + " is a palindrome.");
         } else {
             System.out.println(original + " is not a palindrome.");
