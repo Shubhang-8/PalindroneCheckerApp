@@ -1,17 +1,37 @@
-import java.util.Scanner;
-
 public class PalindromeCheckerApp {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter string: ");
-        String str = sc.nextLine();
-        String reversed = new StringBuilder(str).reverse().toString();
 
-        if(str.equals(reversed)) {
-            System.out.println(str + " is a palindrome");
+    public static void main(String[] args) {
+
+        String input = "Race Car";
+
+        String normalized = input.toLowerCase().replaceAll("\\s+", "");
+
+        boolean isPalindrome = checkPalindrome(normalized);
+
+        if (isPalindrome) {
+            System.out.println("\"" + input + "\" is a Palindrome.");
         } else {
-            System.out.println(str + " is not a palindrome");
+            System.out.println("\"" + input + "\" is NOT a Palindrome.");
         }
-        sc.close();
+
+        System.out.println("Program Completed.");
     }
-}"// UC4 verification comment" 
+
+    public static boolean checkPalindrome(String str) {
+
+        int start = 0;
+        int end = str.length() - 1;
+
+        while (start < end) {
+
+            if (str.charAt(start) != str.charAt(end)) {
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+}
