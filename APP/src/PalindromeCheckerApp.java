@@ -4,6 +4,7 @@ public class PalindromeCheckerApp {
 
         String input = "Race Car";
 
+        // Normalize string
         String normalized = input.toLowerCase().replaceAll("\\s+", "");
 
         boolean isPalindrome = checkPalindrome(normalized);
@@ -17,6 +18,7 @@ public class PalindromeCheckerApp {
         System.out.println("Program Completed.");
     }
 
+    // Two-pointer palindrome check
     public static boolean checkPalindrome(String str) {
 
         int start = 0;
